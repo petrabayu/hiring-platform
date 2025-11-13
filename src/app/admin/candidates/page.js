@@ -1,13 +1,10 @@
 "use client";
-export const dynamic = "force-dynamic";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 
 export default function Page() {
-  const searchParams = useSearchParams();
-  const jobId = searchParams.get("job");
+  const [jobId, setJobId] = useState(null);
   const { candidates } = useAppContext();
   const filtered = candidates.filter((c) => c.job_id === jobId);
   const { jobs } = useAppContext();
@@ -31,6 +28,23 @@ export default function Page() {
       isMounted = false;
     };
   }, [jobs, jobId]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const extractJobId = async () => {
+      if (typeof window === "undefined") return;
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("job");
+      if (isMounted) setJobId(id);
+    };
+
+    extractJobId();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <div className="p-6">
