@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "id": "cand_1762992188471",
+      "job_id": "job_1762992038176",
+      "attributes": [
+        {
+          "key": "full_name",
+          "value": "Reza asep"
+        },
+        {
+          "key": "photo_profile",
+          "value": {}
+        },
+        {
+          "key": "gender",
+          "value": "male"
+        },
+        {
+          "key": "domicile",
+          "value": "Ngawi"
+        },
+        {
+          "key": "email",
+          "value": "reza@example.com"
+        },
+        {
+          "key": "phone_number",
+          "value": "0873456213"
+        },
+        {
+          "key": "linkedin_link",
+          "value": "https://www.linkedin.com/in/reza-ngawi"
+        },
+        {
+          "key": "date_of_birth",
+          "value": "2004-01-13"
+        }
+      ]
+    }
+  ]
+}
